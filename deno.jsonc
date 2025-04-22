@@ -1,0 +1,10 @@
+{
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    }
+  },
+  "tasks": {
+    "compile": "deno compile --allow-all main.ts"
+  }
+}
