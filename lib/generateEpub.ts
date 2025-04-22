@@ -9,6 +9,7 @@ type GenerateEpubArgs = {
   title: string;
   author: string;
   cover?: string;
+  publisher?: string;
 };
 
 export default function generateEpub({
@@ -18,11 +19,13 @@ export default function generateEpub({
   title,
   author,
   cover,
+  publisher,
 }: GenerateEpubArgs) {
   const options = {
     title,
     author,
     cover,
+    publisher,
     output: outputFile,
     content: [
       {

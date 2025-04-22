@@ -42,7 +42,7 @@ export default async function extractImages({
   const images: PdfImage[] = [];
 
   for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-    console.log(`Extracting images from ${pageNum}/${pdf.numPages}...`);
+    console.log(`Extracting images from page ${pageNum}/${pdf.numPages}...`);
     const page = await pdf.getPage(pageNum);
     const operatorList = await page.getOperatorList();
     const viewport = page.getViewport({ scale: 1.0 });

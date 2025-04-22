@@ -30,6 +30,7 @@ await generateEpub({
   title: args.title,
   author: args.author,
   cover: args.cover,
+  publisher: args.publisher,
 });
 
 if (args.cleanup) {
@@ -38,7 +39,15 @@ if (args.cleanup) {
 
 function processArgs() {
   const args = parseArgs(Deno.args, {
-    string: ["pdfUrl", "title", "author", "cover", "epubPath", "mistralApiKey"],
+    string: [
+      "pdfUrl",
+      "title",
+      "author",
+      "cover",
+      "epubPath",
+      "mistralApiKey",
+      "publisher",
+    ],
     boolean: ["help", "cleanup"],
     default: {
       title: "Untitled",
@@ -66,12 +75,13 @@ function processArgs() {
     epubPath: args.epubPath,
     mistralApiKey: args.mistralApiKey,
     cleanup: args.cleanup,
+    publisher: args.publisher,
   };
 }
 
 function help() {
   console.log(
-    "Usage: pdf2epub --pdfUrl <pdfUrl> [--title <title>] [--author <author>] [--cover <cover>] [--epubPath <epubPath>] [--cleanup]",
+    "Usage: pdf2epub --pdfUrl <pdfUrl> [--title <title>] [--author <author>] [--cover <cover>] [--publisher <publisher>] [--epubPath <epubPath>] [--cleanup] ",
   );
 }
 
